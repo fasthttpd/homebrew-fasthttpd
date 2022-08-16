@@ -5,20 +5,20 @@
 class Fasthttpd < Formula
   desc "FastHttpd is a lightweight http server using valyala/fasthttp"
   homepage "https://github.com/fasthttpd/fasthttpd"
-  version "0.4.0"
+  version "0.4.1"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.0/fasthttpd_0.4.0_Darwin_x86_64.tar.gz"
-      sha256 "5b50e149a13f35b2ff51d8f66beafdba17de499facd270bb73d45d88a68725bd"
+    if Hardware::CPU.arm?
+      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Darwin_arm64.tar.gz"
+      sha256 "c1b87d5a924c7cec93a9b1c98f613032c27ee119cb29607c7085b9f17e9024b0"
 
       def install
         bin.install "fasthttpd"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.0/fasthttpd_0.4.0_Darwin_arm64.tar.gz"
-      sha256 "de1faea905a66655dc93b97c7f82b53899d8ee0783b859a4c3e1df0448e6c37c"
+    if Hardware::CPU.intel?
+      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Darwin_x86_64.tar.gz"
+      sha256 "c33045561fc21762fadbb8b936e0885ce6e8e24acf8b6ef2fbeedfa1394c0721"
 
       def install
         bin.install "fasthttpd"
@@ -27,17 +27,17 @@ class Fasthttpd < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.0/fasthttpd_0.4.0_Linux_arm64.tar.gz"
-      sha256 "d77da983ae51311299cf31cf7bfe63b1d07e28197b4792c6ec3a15b25c905a01"
+    if Hardware::CPU.intel?
+      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Linux_x86_64.tar.gz"
+      sha256 "e8260d4becf7b727d8590b294080949387d679d3a6a0419e7a9698fd073e6bb1"
 
       def install
         bin.install "fasthttpd"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.0/fasthttpd_0.4.0_Linux_x86_64.tar.gz"
-      sha256 "d5a02784f261c9ec431f9c76612d2d3b521e1c5a9a26925d614c00a11d6481ea"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Linux_arm64.tar.gz"
+      sha256 "58815b270f7f941e4375fc63a741bfa6343a6451a444dcbbfd51e3339b2487d0"
 
       def install
         bin.install "fasthttpd"
