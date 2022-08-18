@@ -8,17 +8,17 @@ class Fasthttpd < Formula
   version "0.4.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Darwin_arm64.tar.gz"
-      sha256 "c1b87d5a924c7cec93a9b1c98f613032c27ee119cb29607c7085b9f17e9024b0"
+    if Hardware::CPU.intel?
+      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Darwin_x86_64.tar.gz"
+      sha256 "87fa856a8686e5febcfb30a8ead9a253f05289ed6eb298948debe2f2356aa480"
 
       def install
         bin.install "fasthttpd"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Darwin_x86_64.tar.gz"
-      sha256 "c33045561fc21762fadbb8b936e0885ce6e8e24acf8b6ef2fbeedfa1394c0721"
+    if Hardware::CPU.arm?
+      url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Darwin_arm64.tar.gz"
+      sha256 "53dfb3db0f2421a7ae345323af51414e939f3f2e26f8ffc57ed5f717f09be6ec"
 
       def install
         bin.install "fasthttpd"
@@ -29,7 +29,7 @@ class Fasthttpd < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Linux_x86_64.tar.gz"
-      sha256 "e8260d4becf7b727d8590b294080949387d679d3a6a0419e7a9698fd073e6bb1"
+      sha256 "8f03207ce3d4a0f162819e0b43fa3069876b01590a628b2ce55cf35987cf4c7e"
 
       def install
         bin.install "fasthttpd"
@@ -37,7 +37,7 @@ class Fasthttpd < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/fasthttpd/fasthttpd/releases/download/v0.4.1/fasthttpd_0.4.1_Linux_arm64.tar.gz"
-      sha256 "58815b270f7f941e4375fc63a741bfa6343a6451a444dcbbfd51e3339b2487d0"
+      sha256 "e085f65436ef9c1ee9b4bbc8e45447ac03bcf7e278e0257d7985af12042bda5d"
 
       def install
         bin.install "fasthttpd"
